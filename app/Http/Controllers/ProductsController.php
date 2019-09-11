@@ -15,6 +15,9 @@ class ProductsController extends Controller
     public function index()
     {
         // Mostramos una coleeción de productos
+        $products = Product::paginate();
+
+        return view('products.index', ['products' => $products]);
     }
 
     /**
@@ -26,6 +29,7 @@ class ProductsController extends Controller
     {
         // Mostramos un formulario para crear nuevos productos
         $product = new Product;
+
         return view('products.create', ['product' => $product]);
     }
 
@@ -46,7 +50,7 @@ class ProductsController extends Controller
 
         if( Product::create($data) )
         {
-            return redirect('/');
+            return redirect('/productos');
         } else {
             return view('products.create');
         }
@@ -95,7 +99,7 @@ class ProductsController extends Controller
 
         if( $product->save() ) 
         {
-            return redirect('/');
+            return redirect('/productos');
         } else {
             return view('products.edit');
         }

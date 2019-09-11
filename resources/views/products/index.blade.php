@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="container">
+	<div>
+		<products-component></products-component>
+	</div>
 	<div class="row justify-content-center">
 		@foreach( $products as $product )
 		<div class="cols-xs-12 col-sm-6 col-md-4">

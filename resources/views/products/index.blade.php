@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="container">
-		<div class="row">
+		<div class="row justify-content-center">
 			@foreach( $products as $product )
 			<div class="cols-xs-12 col-sm-6 col-md-4">
 				<div class="card padding">
@@ -14,6 +14,9 @@
 				</div>
 			</div>
 			@endforeach
+			<div class="col-12 mt-4 d-flex justify-content-center">
+				{{ $products->links() }}
+			</div>
 		</div>
 	</div>
 @endsection

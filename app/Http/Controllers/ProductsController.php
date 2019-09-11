@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
-class ProductosController extends Controller
+class ProductsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -36,6 +37,18 @@ class ProductosController extends Controller
     public function store(Request $request)
     {
         // Amacenamos en la base de datos un nuevo producto
+        $data = [
+            'name' => $request->name,
+            'description' => $request->description,
+            'price' => $request->price
+        ];
+
+        if( Product::create($data) )
+        {
+            return redirect('/');
+        } else {
+            return view('products.create');
+        }
     }
 
     /**

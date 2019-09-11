@@ -1,4 +1,4 @@
-{!! Form::open(['url' => '/products', 'class' => 'app-form']) !!}
+{!! Form::open(['url' => '/productos', 'class' => 'app-form']) !!}
 	<div>
 		{!! Form::label('name', 'Nombre') !!}
 		{!! Form::text('name', '', ['class' => 'form-control', 'placeholder' => 'Nombre o título del producto']) !!}

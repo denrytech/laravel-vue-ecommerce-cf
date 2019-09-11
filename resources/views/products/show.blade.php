@@ -14,6 +14,7 @@
 					<p class="card-text">{{ $product->description }}</p>
 					<div class="card-actions">
 						<button type="button" name="button" class="btn btn-success">Agregar al carrito</button>
+						@include('products.delete')
 					</div>
 				</div>
 			</div>

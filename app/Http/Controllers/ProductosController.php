@@ -24,6 +24,7 @@ class ProductosController extends Controller
     public function create()
     {
         // Mostramos un formulario para crear nuevos productos
+        return view('products.create');
     }
 
     /**
